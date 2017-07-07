@@ -1,0 +1,120 @@
+#buttonsContainer {
+    text-align: center;
+    padding-top: 10px;
+}
+
+#Delete {
+    background:  #D04E33;
+
+}
+
+#Delete:hover {
+  background: #ba3306;
+  text-decoration: none;
+}
+
+#ErrorSign{
+    font-size: 25px;
+    margin-left: 21%;
+    margin-top: 1%;
+}
+
+#hook {
+    height: 100px;
+    min-height: 50px;
+}
+
+#review {
+    height: 300px;
+    min-height: 50px;
+}
+
+#WriteReviewComponent {
+    width: 30%;
+    height: 720px;
+    background-color: #D04E33;
+    margin-top: 0px;
+    margin-left: 3%;
+    position: fixed;
+    padding-left: 10px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+}
+
+#AuthorContainer, #imageURLContainer {
+    width: 66%;
+    float: right;
+}
+
+#buttonsContainer, .fullRow, .fullRow > * {
+    width: 98%;
+    box-sizing: border-box;
+}
+
+#ScoreContainer, #typeContainer {
+    width: 23%;
+    min-width: 70px;
+}
+
+#starterFrom {
+    margin-top: 7%;
+}
+
+#Submit {
+    background: #049372;
+}
+#Submit:hover {
+  background: #0a700a;
+  text-decoration: none;
+}
+
+.InputButton {
+    -webkit-box-shadow: 0px 1px 3px #000000;
+    -moz-box-shadow: 0px 1px 3px #000000;
+    box-shadow: 0px 1px 3px #000000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #EEEEEE;
+    font-size: 20px;
+    padding: 0px 20px 10px 20px;
+    width: 49%;
+    text-decoration: none;
+}
+
+.LabelStyle {
+    font-weight: bold;
+    text-align: center;
+}
+
+.mainHandler {
+    display: inline-block;
+}
+
+.SubmitSign {
+    font-size: 25px;
+    margin-left: 40%;
+    margin-top: 1%;   
+}
+
+figure {
+    margin: 5px;
+    display: inline-block;
+}
+
+figure > input {
+    border: 0px;
+}
+
+textarea {
+   resize: none;
+}
+
+input, select {
+    height: 30px;
+}
+
+@media screen and (max-width: 1366px) {
+    #WriteReviewComponent {
+        position: relative;
+        width: 93%;
+    }
+
+}

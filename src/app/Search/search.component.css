@@ -1,0 +1,43 @@
+#container {
+    margin-top: 5%;
+    text-align: center;
+}
+#PageCounter {
+    background-color: #D04E33;    
+    width: 100px; 
+}
+
+#PageUl li{
+    display: inline-block;
+}
+
+button {
+    background: none;
+    background-color: #1C2021;    
+    border:none;
+    height: 30px;
+    width: 50px; 
+    cursor: pointer;
+    color: #EEEEEE;
+}
+
+button:focus {
+    outline: 0;
+}
+
+li:focus{
+    outline: 0;
+}
+
+#NothingFound{
+    font-size: 30px;
+}
+
+ul {
+    list-style: none;
+}
+
+
+
+
+

@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "express-jwt": "registry:npm/express-jwt#3.4.0+20160813170757"
+  }
+}

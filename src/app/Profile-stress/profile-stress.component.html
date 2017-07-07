@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="InfoDiv">
+    <h1>Stress!!!!!!!!!</h1>
+    If you are feeling stressed out this is the place to be. Look at some puppies! <br>
+    <app-profile-nav class = "DogsInlineBlock"></app-profile-nav>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm" class = "DogInput">
+      Add doggo <input type="text" name="imgUrl" maxautofocus ngModel required>
+      <input type="Submit">
+    </form>
+
+  </div>
+  <div class = "imgContainer">
+  <button type="button" id = "LeftButton" (click)="Click('Left')"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button>
+  <img [src]="image" alt="dog"><button type="button" (click)="Click('Right')"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button>
+  </div>
+</div>

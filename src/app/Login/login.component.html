@@ -1,0 +1,38 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+  <table id="LoginTable" align="center">
+    <header>
+      <tr>
+        <td>
+          <h2>Please enter your profile's information</h2>
+        </td>
+      </tr>
+      <tr>
+        <td><i class="fa fa-users fa-5x" aria-hidden="true"></i></td>
+      </tr>
+    </header>
+    <main>
+      <tr>
+        <td><label for="Username"><i class="fa fa-user fa-2x " aria-hidden="true"></i></label>
+          <input type="Text" id="Username" name="Username" placeholder="Username" class="LoginInfo" ngModel required></td>
+      </tr>
+      <tr>
+        <td><label for="Password"><i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i></label>
+          <input type="Password" id="Password" name="Password" placeholder="Password" class="LoginInfo" ngModel required></td>
+      </tr>
+    </main>
+    <footer>
+      <tr>
+        <td colspan="2"><input type="submit" id="Submit" class="InputButton" value="Login">
+          <input type="reset" id="Delete" class="InputButton" value="Clear"></td>
+      </tr>
+        <tr>
+        <td>
+          <a class="ForgottenPass" routerLink = "/code">Forgot your password?</a>
+        </td>
+      </tr>
+    </footer>
+  </table>
+
+</form>
+<div [hidden]="WrongLoginInfo" id="SubmitSign"> You have entered a wrong username or password! </div>

@@ -1,0 +1,45 @@
+<nav>
+    <ul id = "MainUl">
+        <li class="navHeader"><img src="../../assets/images/GGReviewsLogo4.png" alt="GGReviews"></li>
+        <li class="Home" routerLink="/home" routerLinkActive="active-link">Home</li>
+        <li routerLink="/games">Gaming</li>
+        <li routerLink="/movies">Movies</li>
+        <li routerLink="/music">Music</li>
+        <li routerLink="/books">Books</li>
+        <li class="FloatRight" *ngIf = "!LogedIn"  routerLink="/login">Login <i class="fa fa-sign-in " aria-hidden="true"></i></li>
+        <li *ngIf = "!LogedIn" routerLink="/register" >Register</li>
+        <li class="FloatRight" *ngIf = "LogedIn" routerLink = "/profile/info">{{Username}}</li>        
+        <li *ngIf = "LogedIn" routerLink = "/write">Write Review</li>                
+        <li *ngIf = "LogedIn" (click) = "onLogout()">Logout</li>        
+        <li id = "Bars" (click) = "DropDown()"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></li>        
+        <li id = "SearchLi">
+            <button type="button" class="SearchButton" value="" (click)="ShowSearch()">
+                    <i [ngClass]="CurrentClass" aria-hidden="true">
+                    </i>
+                    </button>
+        </li>
+    </ul>
+
+<ul  [ngClass] = "DropDownUl" (window:resize)="onResize($event)">       
+        <li class="Home" routerLink="/home" (click) = "NavClick()" routerLinkActive="active-link">Home</li>
+        <li routerLink="/games" (click) = "NavClick()">Gaming</li>
+        <li routerLink="/movies" (click) = "NavClick()">Movies</li>
+        <li routerLink="/music" (click) = "NavClick()">Music</li>
+        <li routerLink="/books" (click) = "NavClick()">Books</li>
+        <li class="FloatRight" *ngIf = "!LogedIn"  routerLink="/login" (click) = "NavClick()">Login <i class="fa fa-sign-in " aria-hidden="true"></i></li>
+        <li *ngIf = "!LogedIn" routerLink="/register" (click) = "NavClick()">Register</li>
+        <li class="FloatRight" *ngIf = "LogedIn" routerLink = "/profile/info" (click) = "NavClick()">{{Username}}</li>        
+        <li *ngIf = "LogedIn" routerLink = "/write" (click) = "NavClick()">Write Review</li>                
+        <li *ngIf = "LogedIn" (click) = "onLogout()">Logout</li>        
+</ul>
+    <form (ngSubmit)="onSearch(f)" #f="ngForm" id="SearchForm" [style.display]="FrameDisplay">
+    <button type="submit" class="SearchButton" value="">
+                    <i class="fa fa-search fa-2x" aria-hidden="true">
+                    </i>
+        </button>
+    <input type="text" name="Search" class="SearchInput" placeholder="Search" ngModel>
+</form>
+</nav>
+<script>
+        window.onresize = function (e) {alert("hi"); }
+</script>

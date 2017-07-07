@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    color: #EEEEEE;
+    margin: 0px;
+    padding: 0px;
+    background-color: #353C3E;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+    height: 100%;
+    min-width:100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: #EEEEEE;
+}
+
+ @media screen and (max-width: 1585px) {
+    body {
+       margin-top: 4%;
+    }
+ }
+  @media screen and (max-width: 1085px) {
+    body {
+       margin-top: 8%;
+    }
+ }
+ 

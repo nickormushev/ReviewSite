@@ -1,0 +1,155 @@
+#buttonContainer {
+    position: absolute;
+    display: none;
+}
+
+button:focus {
+    outline: 0;
+}
+
+#buttonContainer > button {
+    border: none;
+    background: black;
+    color: white;
+    cursor: hand;
+    cursor: pointer;
+}
+
+#displayer {
+    background-color: #D04E33;
+    width: 65%;
+    margin-top: 0px;
+    margin-bottom: 100px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+}
+
+#imageContainer {
+    margin: 0px;
+    position: relative;
+}
+
+#ScoreCircle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    font-size: 70px;
+    line-height: 150px;
+    text-align: center;
+    font-weight: bold;
+    background: linear-gradient(to right, #c02425, #f0cb35);
+    vertical-align: middle;
+    float: left;
+    margin-right: 30px;
+    margin-left: 5px;
+    overflow: hidden;
+}
+
+.Author{
+    margin-left: 16%;
+    margin-bottom: 2%;
+    font-size: 20px;      
+}
+
+.PreText{
+    white-space: pre-wrap;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 21px;      
+    text-align: left;
+}
+
+header {
+    position: absolute;
+    bottom: 3px; 
+    background-color:rgba(28,32,33,0.7);
+    overflow: hidden;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    box-sizing: border-box;    
+}
+
+img {
+    width: 100%;
+}
+
+:host-context(#AdminReviews) #Edit {
+      display: none;
+}
+
+:host-context(#HiddenReview ) #Review  {
+    display: none;  
+}
+
+:host-context(.MyReviews ) #Review  {
+    display: none;
+}
+
+:host-context(.MyReviews ) #displayer  {
+    margin-left: 24%;
+}
+
+:host-context(.MyReviews) #buttonContainer { 
+    display: block;   
+}
+
+:host-context(.Reviews) #displayer {
+    margin-left: 17%;
+}
+
+:host-context(#shower){
+    margin-left: 35%;
+    width: 63%;
+}
+
+:host-context(#shower) #displayer {
+    width: 100%;
+    margin-right: 3%;
+    margin-top: 0%;
+}
+
+@media screen and (max-width: 1366px) {
+    header {
+        position: relative;
+        background-color: #1C2021;
+        bottom: 5px;
+    }   
+
+    :host-context(.MyReviews) #displayer {
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        width: 100%;
+    }
+
+    :host-context(.Reviews) #displayer {
+        margin-left: 3%;
+        width: 94%;
+    }
+
+    :host-context(#shower) { 
+        margin-left: 3%;
+        width: 94%;
+    }
+
+    :host-context(#shower) #displayer {
+        width: 100%;
+        margin-right: 3%;
+        margin-top: 5%;
+        margin-left: 0%;
+    }
+
+    .mainHandler {
+            margin: 0px;
+    }
+}
+
+@media screen and (max-width: 825px) {
+ #displayer {
+     width: 100% !important;
+     margin-left: 0px !important;
+     padding: 0px;
+ }
+  h1 {
+        font-size: 30px
+    }   
+}
+

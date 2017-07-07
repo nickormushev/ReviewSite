@@ -1,0 +1,150 @@
+.SearchInput{
+    width: 70%;
+    height: 40%;
+    padding-top: 4px;
+    float: right;
+}
+.SearchButton {
+    background: none;
+    border:none;
+    height: 50%;
+    width: 50px; 
+    cursor: pointer;
+    float: right;
+}
+
+.DropDownUlDisabled{
+    display: none;
+}
+.DropDownUlEnabled li {
+    display: block;  
+    text-align: center;  
+    margin-top: 3%;
+    padding: 2% 0px;
+    
+}
+.DropDownUlEnabled {
+    display: block;
+}
+.DropDownUlEnabled li:hover {
+    background-color: #353C3E;
+} 
+
+#SearchForm{
+    padding-top: 1%;
+    margin-top: .5%;
+    margin-right: 10%;
+    right: 0;
+    float:right;
+    width:280px;
+    display: table-cell;
+    vertical-align: middle;
+    border: 1px solid #EEEEEE;
+    background-color: #1C2021;
+    height: 50px;
+    position: absolute;
+    z-index: 10;
+}
+#Bars {
+    display: none;
+}
+.navHeader{
+    cursor:initial;
+}
+nav #MainUl .FloatRight{
+    margin-left:10%;
+}
+nav {
+    width: 100%;
+    background-color: #1C2021;
+    top:0px;
+    position: fixed;
+    z-index:101;
+
+}
+
+.fa-search {
+color: #EEEEEE;
+}
+.fa-times {
+color: #EEEEEE;    
+}
+ul {
+    margin:0px;
+    padding: 0px;
+}
+li.navHeader {
+    background-color: #D04E33;
+    padding: 11px 75px;
+    text-align: center;
+}
+li.Home {
+    border: none;
+}
+li {
+    display: inline-block;
+    color: #EEEEEE;
+    font-size: 25px;    
+    cursor: pointer;
+    vertical-align: middle;
+}
+li:focus{
+  outline:0;
+}
+button:focus{
+    outline: 0;
+}
+
+@media screen and (max-width: 1344px) {
+    #Bars, #SearchLi {
+        float: right;
+        margin-top: 1.5%;
+    }
+    #Bars {
+        display: inline;
+        margin-right: 10px;
+    }
+    #SearchLi {
+        margin-top: 2%;
+    }
+    #MainUl li:not(.navHeader):not(#SearchLi):not(#Bars) {
+        display: none;
+    }
+
+}
+@media screen and (min-width: 1886px) {
+    li {
+        padding: 0px 1.8%;
+    }
+}
+@media screen and (max-width: 1885px) {
+    li {
+        padding: 0 1.4% ;
+    }
+}
+@media screen and (max-width: 1675px) {
+    li {
+        padding: 0px 1%;
+    }
+}
+@media screen and (max-width: 1510px) {
+    li {
+        padding: 0px 0.5%;
+    }
+}
+@media screen and (max-width: 433px) {
+
+    .navHeader {
+        width: 30%;
+        text-align: center;
+        float: left !important;
+        padding-left: 10px !important;
+        
+    }
+    #SearchForm {
+        margin-top: 17%;
+    }
+    .DropDownUlEnabled {
+            margin-top: 25%;
+    }
+}

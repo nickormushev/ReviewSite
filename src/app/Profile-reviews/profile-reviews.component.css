@@ -1,0 +1,66 @@
+.container {
+    margin-top: 6%;
+    font-size: 20px;
+    margin-right: 60px;
+}
+.InfoDiv{
+    float: left;
+    padding-left: 10%;
+    margin-right: 1%;
+    width: 21%;
+}
+ul {
+    list-style: none;
+}
+ul li {
+    width: 100%;
+    margin-left: 3%;
+    
+}
+li:focus {
+    outline: 0;
+}
+#ReviewsUl{
+    margin-left: 10%;
+}
+#moreIcon{
+    background-color: #1C2021;
+    text-align: center;
+    width: 20%;
+    margin-left: 47%;
+    cursor: pointer;
+    margin-bottom: 2%;
+        height: 40px;
+    
+}
+ @media screen and (max-width: 1366px) {
+    .InfoDiv {
+    width: 100%;
+    margin-right: 0%;
+    }
+     #moreIcon{
+        margin-right: 45%;
+    }
+    ul li {
+        margin-bottom: 3%;
+        float: right;
+        margin-right: 5%;
+    }
+   
+ }
+ @media screen and (max-width: 825px) {
+ ul {
+     width: 100% !important;
+     margin-left: 0px !important;
+     padding: 0px;
+ }
+ ul li {
+     width: 100%;
+ }
+figure {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    margin-left:4.9%;
+}
+}

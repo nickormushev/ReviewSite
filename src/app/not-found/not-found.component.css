@@ -1,0 +1,23 @@
+#NotFound{
+    background-color: #D04E33;
+    margin-left: 32%;
+    text-align: center;
+    width: 800px;
+    font-size: 20px;
+    margin-top: 5%;
+
+}
+#Header{
+    font-size: 40px;
+    padding-top: 1%;
+    
+}
+i {
+    text-align: left;
+}
+li {
+    font-size: 150%;
+    list-style-type: none;
+    padding-right: 3%;
+    padding-bottom: 1%;
+}

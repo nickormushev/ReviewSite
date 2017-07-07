@@ -1,0 +1,71 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <table id="RegisterTable" border="1px" align="center">
+        <header>
+            <tr>
+                <td>
+                    <table id="HeaderTable" align="center">
+                        <tr>
+                            <td id="header">
+                                <h2>Please create your account</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="headerIcon"><i class="fa fa-users fa-5x" aria-hidden="true"></i></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </header>
+        <main>
+            <tr>
+                <td class="RightName">Username*</td>
+                <td><input [ngClass]="BorderClass" type="text" name="Username" class="BigInputs" minlength="3" maxlength="8"
+                        maxautofocus ngModel required>
+                </td>
+            </tr>
+            <tr>
+                <td class="RightName">Password*</td>
+                <td><input [ngClass]="BorderClass" type="password" name="Password" class="BigInputs" minlength="5" ngModel required></td>
+
+            </tr>
+            <tr>
+                <td class="RightName">Repeat Password*</td>
+                <td><input [ngClass]="BorderClass" type="password" name="RepeatPassword" class="BigInputs" validateEqual="password"
+                        minlength="5" ngModel required></td>
+            </tr>
+            <tr>
+                <td class="RightName">E-Mail*</td>
+                <td><input [ngClass]="BorderClass" type="email" name="EMail" class="BigInputs" ngModel required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"></td>
+            </tr>
+            <tr>
+                <td class="RightName">Birthdate</td>
+                <td id="Birthdate">
+                    Day <input type="number" min="1" max="31" name="Day" class="BirthdayInputs" size="1" ngModel> Month
+                    <input type="number" min="1" max="12" name="Month" class="BirthdayInputs" size="1" ngModel> Year(4 digit)
+                    <input type="number" min="1950" max="2017" name="Year" class="BirthdayInputs" size="2" ngModel>
+                </td>
+            </tr>
+            <tr>
+                <td class="RightName">Gender</td>
+                <td>
+                    <select name="Gender" ngModel>
+                        <option *ngFor = "let gender of Genders" [value] = "gender">{{gender}}</option>
+                    </select>
+                </td>
+            </tr>
+        </main>
+        <footer>
+            <tr>
+                <td colspan="2" class="colgreen">
+                    <input type="submit" id="Submit" class="InputButton" value="Create account">
+                    <input type="reset" id="Delete" class="InputButton" value="Clear text">
+                </td>
+            </tr>
+        </footer>
+    </table>
+</form>
+<div [hidden]="passwordsEqual" class="SubmitSign"> Your passwords are not Equal! </div>
+<div [hidden]="UsernameExists" class="SubmitSign"> Someone already has an account with that username! </div>
+<div [hidden]="EmailExists" class="SubmitSign"> There is an account with this email! </div>
+<div [hidden]="!submitted" class="SubmitSign"> Submitted! You can login now. </div>
+<div [hidden]="YearsFlag" class="SubmitSign"> The Day, Month or Year is invalid! Please check your inputs. </div>

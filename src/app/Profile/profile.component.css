@@ -1,0 +1,133 @@
+#UsernameFig {
+     border-top: none;
+ }
+
+.BirthdayInputs{
+    height:30px;
+    width:25%;
+    display: inline-block;
+    margin-left: 4%;
+    margin-bottom: 10%;
+    margin-top: 7%; 
+}
+
+.container {
+    margin-top: 6%;
+    font-size: 20px;
+}
+
+.fog {
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    display:block;
+    background-color: rgba(28,32,33,0.8);
+    z-index: 100;
+}
+
+.InfoDiv{
+    float: left;
+    padding-left: 10%;
+    margin-right: 1%;
+    width: 21%;
+}
+
+ .overlay {
+    position: fixed;
+    top:30%;
+    left:35%;
+    height:25%;
+    background-color:#D04E33;
+    border:1px solid #EEEEEE;
+    z-index:101;
+    box-sizing:border-box;
+    padding:40px 40px;
+    align-content: center;
+    
+ }
+
+.Submit{
+    border-collapse: collapse;
+    color: #EEEEEE;
+    height:30px;
+    vertical-align: middle;
+    border: none;
+    cursor: pointer;
+    
+}
+
+.SubmitSign{
+    font-size: 23px;
+}
+
+.TableContainer {
+    background-color: #D04E33;
+    margin-right: 20%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    margin-bottom: 5%;
+    width: 45%;
+    float:right;
+}
+
+.TableContainer > figure { 
+    display: flex;
+    padding: 6%;
+    border-top: 1px solid #EEEEEE;   
+    margin: 0;
+}
+
+form {
+    text-align: center;
+}
+
+figure > div {
+    flex: 1;
+}
+
+i {
+     cursor: pointer;
+     float: right;
+}
+
+select {
+    color: black;
+}
+
+select, input{
+  font-size:18px;
+  display:block;
+  width:70%;
+  border:none;
+  color: #EEEEEE;
+  border-bottom: 1px solid #EEEEEE;
+  background: transparent;
+  margin-left: 14%;
+  margin-top: 5%;
+  
+}
+
+select, input:focus{ 
+    outline:none; 
+}
+
+::-webkit-input-placeholder { 
+  color: #EEEEEE;
+}
+
+ @media screen and (max-width: 1366px) {
+    .InfoDiv {
+    width: 100%;
+    margin-right: 0%;
+    margin-left: 0%;
+    }
+    .TableContainer {
+        margin-top: 3%;
+        width: 80%;
+        margin-bottom: 3%;
+        margin-right: 10%;
+        margin-left: 10%;   
+    }
+ }

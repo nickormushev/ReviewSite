@@ -1,0 +1,7 @@
+<ul id = "ProfileNavUl">
+  <li routerLink="/profile/info">Personal Info</li>
+  <li routerLink="/profile/reviews">Your reviews</li>
+  <li routerLink="/profile/stress">Stress!!!</li>
+  <li routerLink="/profile/users" *ngIf = "Admin()">Users!</li>
+  <li routerLink="/profile/adminReviews" *ngIf = "Admin()">Reviews!</li>
+</ul>

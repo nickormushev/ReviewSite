@@ -1,0 +1,13 @@
+<figure class="container">
+  <div class="InfoDiv">
+    <h1>Your reviews</h1>
+    Edit or remove the reviews you have written! Or just look at them i don't know. <br>
+    <app-profile-nav></app-profile-nav>
+  </div>
+  <ul id="ReviewsUl">
+    <li *ngFor="let article of articles">    
+      <app-preview-table class="MyReviews" [user] = "user" [review]="article" (ReviewsChange)="MyInit()"></app-preview-table>
+    </li>
+    <li id = "moreIcon"><i class="fa fa-chevron-down fa-2x" (click) = "More()" aria-hidden="true"></i></li>
+  </ul>
+</figure>

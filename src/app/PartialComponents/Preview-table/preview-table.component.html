@@ -1,0 +1,27 @@
+<div id="displayer" class="mainHandler">
+  <figure id="imageContainer">
+    <div id="buttonContainer">
+      <button type="button" (click) = "Delete(review._id)"><i class="fa fa-times fa-2x" aria-hidden="true"></i></button>
+      <button type="button" id = "Edit" [routerLink]="['/write', review._id]"><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></button>
+    </div>
+    <img [src]="review.imgUrl" alt="Enter a valid imgUrl">
+    <header class="header-sub-container">
+      <div id="ScoreCircle"><span>{{review.score}}</span></div>
+      <div id="ScoreCircleRight">
+        <h1>{{review.headline}}</h1>
+        <div class="Author">By {{review.author}} {{review.date | date}}</div>
+      </div>
+    </header>
+  </figure>
+  <br class="newLine">
+
+  <figure>
+    <pre class = "PreText" [innerText]="AddParagraph(review.hook)"></pre>
+  </figure>
+  <br class="newLine">
+
+  <figure id = "Review">
+    <pre class = "PreText" [innerText]="AddParagraph(review.review)"></pre>
+  </figure>
+  <br class="newLine">
+</div>

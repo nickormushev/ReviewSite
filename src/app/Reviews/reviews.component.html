@@ -1,0 +1,15 @@
+<div id="container">
+  <ul>
+    <li *ngFor="let article of articles" [routerLink] = "['/review', article._id]">
+      <app-preview-table class = "Reviews" id = "HiddenReview" [review] = "article"></app-preview-table>
+    </li>
+  </ul>
+
+  <ul id="PageUl">
+    <li><button type="button" id="PageCounter">Page {{currentPage}} of 10</button></li>
+    <li *ngFor="let page of pages">
+      <button type="button" (click)="Routing(page)">{{page}}</button>
+    </li>
+  </ul>
+
+</div>

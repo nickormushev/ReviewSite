@@ -1,0 +1,16 @@
+<div id="container">
+  <ul>
+    <li *ngIf = "NothingFlag" id = "NothingFound">Nothing was found</li>
+    <li *ngFor="let article of articles" [routerLink] = "['/review', article._id]">
+      <app-preview-table class = "Reviews" [review] = "article" id = "HiddenReview"></app-preview-table>
+    </li>
+  </ul>
+
+  <ul id="PageUl">
+    <li><button type="button" id="PageCounter">Page {{currentPage}} of 10</button></li>
+    <li *ngFor="let page of pages">
+      <button type="button" (click)="Routing(page)">{{page}}</button>
+    </li>
+  </ul>
+
+</div>

@@ -1,0 +1,42 @@
+<table id="LoginTable" align="center">
+  <tr>
+    <td>
+      <div class="Text">
+        <h2>Forgotten password?</h2>
+        <br> Please enter your email address in the field to the right. Afterwards you will recieve a message containing a
+        code. Then enter that code in the other field and you will be redirected.
+      </div>
+    </td>
+    <td>
+      <header>
+        <tr>
+          <td ><i class="fa fa-users fa-5x" aria-hidden="true"></i></td>
+        </tr>
+      </header>
+      <main>
+        <form (ngSubmit)="onSubmit(fMail)" #fMail="ngForm">
+
+          <tr>
+            <td>
+              <label><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></label>
+              <input type="email" name="EMail" class="LoginInfo" placeholder = "Email" ngModel required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"></td>
+          </tr>
+          <tr>
+            <td colspan="2"><input type="submit" id="Submit" class="InputButton" value="Send Email">
+              <input type="reset" id="Delete" class="InputButton" value="Clear"></td>
+          </tr>
+        </form>
+        <form (ngSubmit)="SubmitCode(f)" #f="ngForm">
+
+          <tr>
+            <td><label><i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i></label>
+              <input type="Text"  name="Code" placeholder="Code" class="LoginInfo" ngModel required></td>
+          </tr>
+          <tr>
+            <td colspan="2"><input type="submit" id="Submit" class="InputButton" value="Send Code">
+              <input type="reset" id="Delete" class="InputButton" value="Clear"></td>
+          </tr>
+        </form>
+      </main>
+  </tr>
+</table>

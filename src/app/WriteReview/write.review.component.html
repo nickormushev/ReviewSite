@@ -1,0 +1,56 @@
+<div id="starterFrom"></div>
+<div id="WriteReviewComponent" class="mainHandler">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <figure id="typeContainer">
+      <div class="LabelStyle">Type</div>
+        <select name="type" class="BigInputs" id="Type" [(ngModel)]="defaultValue" class="fullRow">
+          <option *ngFor = "let type of types" [value] = "type">{{type}}</option>
+        </select>
+    </figure>
+    <figure id="imageURLContainer"  class="fullRow">
+      <div class="LabelStyle">ImgUrl</div>
+            <input type="text" name="imgUrl" class="BigInputs" [(ngModel)]="review.imgUrl" required>
+    </figure>
+    <br class="newRow">
+
+    <figure class="fullRow">
+       <div class="LabelStyle">Headline</div><input type="text" name="headline" class="BigInputs" id="Headline" [(ngModel)]="review.headline"
+            required>
+    </figure>
+    <br class="newRow">
+
+    <figure class="fullRow expanded">
+      <div class="LabelStyle">Hook</div>
+      <textarea type="text" name="hook" class="BigInputs" id="hook" [(ngModel)]="review.hook" wrap="hard"
+        required></textarea>
+    </figure>
+    <br class="newRow">
+
+    <figure class="fullRow expanded">
+      <div class="LabelStyle">Review</div>
+      <textarea type="text" name="review" class="BigInputs" id="review" [(ngModel)]="review.review" wrap="hard"
+        required></textarea>
+    </figure>
+    <br class="newRow">
+    
+    <figure  id = "ScoreContainer">
+      <div class="LabelStyle">Score</div><input id="score" #score (keyup)="ScoreChecker(score.value)" type="number"
+        min="1" max="100" name="score" class="fullRow" [(ngModel)]="review.score" required>
+    </figure>
+    <figure id = "AuthorContainer">
+      <div class="LabelStyle">Author</div> <input type="text" name="author" class="fullRow" [(ngModel)]="review.author"
+        required>
+    </figure>
+    <br class="newRow">
+
+    <figure id="buttonsContainer">
+        <input type="submit" id="Submit" class="InputButton" value="Publish!">
+        <input type="reset" id="Delete" class="InputButton" value="Clear">
+    </figure>
+
+    <div [hidden]="PublishFlag" class="SubmitSign"> Published! </div>
+    <div [hidden]="ErrorFlag" id="ErrorSign"> There was some kind of error! </div>
+  </form>
+</div>
+
+<app-preview-table [review]="review" class="mainHandler" id="shower"></app-preview-table>

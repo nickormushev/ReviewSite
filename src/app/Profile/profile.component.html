@@ -1,0 +1,80 @@
+<div class="container">
+  <figure class="InfoDiv">
+    <h1>Your personal info</h1>
+    Here you can manage this basic information: your username, email, password and others. <br>
+    <div [hidden]="UsernameExists" class="SubmitSign"> Ther is an account with that username! </div>
+    <app-profile-nav></app-profile-nav>
+  </figure>
+
+  <div class = "TableContainer">
+    <figure id="UsernameFig">
+      <div>Username</div>
+      <div>{{user.Username}}</div>
+      <div><i class="fa fa-arrow-right fa-lg" (click)="Change('Username')" aria-hidden="true"></i></div>
+    </figure>
+    <figure>
+      <div>Password</div>
+      <div>Change password</div>
+      <div><i class="fa fa-arrow-right fa-lg" aria-hidden="true" (click)="ChangePassword()" (click)="Change('Password')"></i></div>
+    </figure>
+    <figure>
+      <div>EMail</div>
+      <div>{{user.EMail}}</div>
+      <div><i class="fa fa-arrow-right fa-lg" (click)="Change('EMail')" aria-hidden="true"></i></div>
+    </figure>
+    <figure>
+      <div>Birthdate</div>
+      <div>{{user.Birthdate | date}}</div>
+      <div><i class="fa fa-arrow-right fa-lg" aria-hidden="true" (click)="Change('Birthdate')"></i></div>
+    </figure>
+    <figure>
+      <div>Gender</div>
+      <div>{{user.Gender}}</div>
+      <div><i class="fa fa-arrow-right fa-lg" (click)="Change('Gender')" aria-hidden="true"></i></div>
+    </figure>
+    <figure>
+      <div>Delete</div>
+      <div>Delete profile</div>
+      <div><i class="fa fa-arrow-right fa-lg" (click)="Delete()" aria-hidden="true"></i></div>
+    </figure>
+  </div>
+
+  <div class="fog" (click)="Close()" *ngIf = "HiddenFlag"></div>
+  <div class="overlay" *ngIf = "HiddenFlag">
+    <form *ngIf="ViewCheck('Username')" (ngSubmit)="onSubmit(f)" #f="ngForm">
+      Change Username. <br> It should be 3-8 letters.
+      <input type="text" name="Username" class="BigInputs" minlength="3" maxlength="8" maxautofocus ngModel required>
+      <br>
+      <input type="submit" class="Submit" value="Submit">
+    </form>
+
+    <form *ngIf="ViewCheck('EMail')" (ngSubmit)="onSubmit(f)" #f="ngForm">
+      Change E-Mail
+      <input type="email" name="EMail" class="BigInputs" ngModel required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+      <br>
+      <input type="submit" class="Submit" value="Submit">
+    </form>
+
+    <form *ngIf="ViewCheck('Birthdate')" (ngSubmit)="onSubmit(f)" #f="ngForm"> Change Birthdate. <br>
+      <input type="number" min="1" max="31" name="Day" class="BirthdayInputs" size="1" placeholder="Day" required ngModel>
+      <input type="number" min="1" max="12" name="Month" class="BirthdayInputs" size="1" placeholder="Month" required ngModel>
+      <input type="number" min="1950" max="2017" name="Year" class="BirthdayInputs" placeholder="Year" size="2" required ngModel>
+      <br>
+      <input type="submit" class="Submit" value="Submit">
+    </form>
+    <form *ngIf="ViewCheck('Password')" (ngSubmit)="onPasswordChange(f)" #f="ngForm"> Verification Email sent. Please enter the code from it bellow. <br>
+      <input type="text" name="Code" class="BigInputs" ngModel required>
+      <br>
+      <input type="submit" class="Submit" value="Submit">
+    </form>
+
+    <form *ngIf="ViewCheck('Gender')" (ngSubmit)="onSubmit(f)" #f="ngForm" id="Gender">
+      Gender
+      <select name="Gender" required ngModel>
+            <option *ngFor = "let gender of Genders"  [value] = "gender">{{gender}}</option>
+        </select>
+      <br>
+      <input type="submit" class="Submit" value="Submit">
+    </form>
+  </div>
+</div>

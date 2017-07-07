@@ -1,0 +1,46 @@
+footer {
+    background-color: #1C2021;
+    text-align: center;
+    padding-right: 12%;
+    padding-left: 4%;
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+}
+
+footer .FooterText {
+    display: none;
+    width: 10px;
+}
+
+footer .Social:focus {
+  outline: none;
+}
+
+footer .Top {
+    font-size: 20px;
+    color: #EEEEEE;
+    cursor: pointer;
+}
+
+footer .fa-facebook-official {
+    color:#3b5998;
+}
+
+footer .fa-twitter-square{
+    color:#4099FF;
+}
+
+footer .fa-youtube-play{
+    color:#c4302b;
+}
+
+.Icon { 
+    margin-top: 20%;
+    cursor: pointer;
+    display: inline-block; 
+}
+
+Icons, .TextDiv {
+    flex: 1;    
+}

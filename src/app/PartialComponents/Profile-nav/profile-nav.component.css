@@ -1,0 +1,29 @@
+ul {
+    list-style: none;
+}
+ul li {
+    background-color: #1C2021;
+    margin-bottom: 2%;
+    width: 60%;
+    text-align: center;
+    cursor: pointer;
+    padding-bottom: 1%;
+    border-radius: 3px;
+}
+
+li:focus {
+    outline: 0;
+}
+
+ @media screen and (max-width: 1366px) {
+    #ProfileNavUl li {
+        display: inline-block;
+        width: 16%;
+        padding-bottom: 0.5%;
+        padding-top: 0.5%;
+    }
+    #ProfileNavUl{
+        padding-left:0px;
+        
+    }
+ }
