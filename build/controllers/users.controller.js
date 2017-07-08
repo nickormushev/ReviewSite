@@ -26,14 +26,14 @@ var UsersController = (function () {
         var deferred = Q.defer();
         this.UsersData.findOne({ Username: Username })
             .then(function (user) {
-            var Token;
-            if (user.Admin === true) {
-                Token = jwt.sign(new Object({ sub: user.id, admin: true }), config_1.secret);
-            }
-            else {
-                Token = jwt.sign(new Object({ sub: user.id, admin: false }), config_1.secret);
-            }
             if (user && bcrypt.compareSync(Password, user.hash)) {
+                var Token = void 0;
+                if (user.Admin === true) {
+                    Token = jwt.sign(new Object({ sub: user.id, admin: true }), config_1.secret);
+                }
+                else {
+                    Token = jwt.sign(new Object({ sub: user.id, admin: false }), config_1.secret);
+                }
                 deferred.resolve({
                     _id: user.id,
                     Username: user.Username,

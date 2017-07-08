@@ -31,14 +31,13 @@ export class UsersController implements BaseController<User> {
         this.UsersData.findOne({ Username: Username })
             .then((user: User) => {
 
+                if (user && bcrypt.compareSync(Password, user.hash)) {
                 let Token;
                 if (user.Admin === true) {
                     Token = jwt.sign(new Object({ sub: user.id, admin: true }), secret);
                 } else {
                     Token = jwt.sign(new Object({ sub: user.id, admin: false }), secret);
                 }
-
-                if (user && bcrypt.compareSync(Password, user.hash)) {
                     deferred.resolve({
                         _id: user.id,
                         Username: user.Username,
