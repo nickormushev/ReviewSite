@@ -49,6 +49,22 @@ ul {
      width: 15%;
  }
 }
+@media screen and (max-width: 825px) {
+ ul {
+     width: 100%;
+     margin: 0px;
+     padding: 0px;
+ }
+
+ #PageUl li {
+     width: 20px;
+     margin-right: 20px;
+     
+ }
+ #PageUl li:first-child {
+     width: 15%;
+ }
+}
 @media screen and (max-width: 1366px) {
  ul {
      width: 100%;

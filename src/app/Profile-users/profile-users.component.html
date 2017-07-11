@@ -5,12 +5,12 @@
     <app-profile-nav></app-profile-nav>
   </div>
   
-  <ul>
-    <li *ngFor="let user of users">
+  <ul (window:resize)="onResize($event)">
+    <li *ngFor="let user of users" >
       <div class = "delete">
-        <i class="fa fa-times fa-2x" aria-hidden="true" (click) = "Delete(user._id)"></i>
+        <i [ngClass] = "ExClass" aria-hidden="true" (click) = "Delete(user._id)"></i>
       </div>
-     <div class = "UserIcon"><i class="fa fa-user fa-5x" aria-hidden="true"></i></div> 
+     <div class = "UserIcon"><i [ngClass] = "UserIconClass" aria-hidden="true"></i></div> 
       {{user.Username}}
     </li>
   </ul>

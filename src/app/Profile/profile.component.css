@@ -16,6 +16,13 @@
     font-size: 20px;
 }
 
+.ellipses {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 50%;
+}
+
 .fog {
     position:fixed;
     top:0;
@@ -130,4 +137,11 @@ select, input:focus{
         margin-right: 10%;
         margin-left: 10%;   
     }
+ }
+  @media screen and (max-width: 500px) {
+    .TableContainer{
+        width: 100%;
+        margin-right: 0px;
+    }
+    
  }

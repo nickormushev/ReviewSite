@@ -26,4 +26,11 @@ li:focus {
         padding-left:0px;
         
     }
+    
+ }
+  @media screen and (max-width: 500px) {
+    #ProfileNavUl{
+        font-size: 12.5px;
+    }
+    
  }

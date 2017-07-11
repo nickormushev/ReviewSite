@@ -143,13 +143,20 @@ img {
 }
 
 @media screen and (max-width: 825px) {
- #displayer {
+    #displayer {
      width: 100% !important;
      margin-left: 0px !important;
      padding: 0px;
  }
-  h1 {
-        font-size: 30px
+    h1 {
+        font-size: 20px
+    }
+    .Author {
+        font-size:  14px;
+
+    }
+    .PreText {
+        font-size: 14px;
     }   
 
     #ScoreCircle {

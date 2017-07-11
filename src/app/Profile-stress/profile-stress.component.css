@@ -78,3 +78,13 @@ form {
         margin-left: 7%;
     }
  }
+@media screen and (max-width: 780px) {
+    .imgContainer {
+        height: 450px;
+    }
+ }
+@media screen and (max-width: 450px) {
+    .imgContainer {
+        height: 320px;
+    }
+ }
