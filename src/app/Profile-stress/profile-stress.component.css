@@ -80,11 +80,11 @@ form {
  }
 @media screen and (max-width: 780px) {
     .imgContainer {
-        height: 450px;
+        height: 400px;
     }
  }
 @media screen and (max-width: 450px) {
     .imgContainer {
-        height: 320px;
+        height:227px;
     }
  }
