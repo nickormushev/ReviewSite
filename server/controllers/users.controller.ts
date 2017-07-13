@@ -8,7 +8,6 @@ import * as path from "path";
 import * as bcrypt from "bcryptjs";
 import * as jwt from "jsonwebtoken";
 import * as _ from "lodash";
-import * as Q from "q";
 import * as nodemailer from "nodemailer";
 
 
@@ -26,9 +25,8 @@ export class UsersController implements BaseController<User> {
         return res.send(this.UsersData.GetById(req.params.id));
     };
     Login(Username, Password) {
-        const deferred = Q.defer();
 
-        this.UsersData.findOne({ Username: Username })
+        return this.UsersData.findOne({ Username: Username })
             .then((user: User) => {
 
                 if (user && bcrypt.compareSync(Password, user.hash)) {
@@ -38,20 +36,25 @@ export class UsersController implements BaseController<User> {
                 } else {
                     Token = jwt.sign(new Object({ sub: user.id, admin: false }), secret);
                 }
-                    deferred.resolve({
-                        _id: user.id,
+                    return new Promise((res, rej) => {
+                       res({_id: user.id,
                         Username: user.Username,
                         Birthdate: user.Birthdate,
                         Gender: user.Gender,
                         EMail: user.EMail,
-                        token: Token
+                        token: Token});
                     });
                 } else {
-                    deferred.resolve();
+                       return new Promise((res, rej) => {
+                       res();
+                    });
                 }
-            }).catch(err => deferred.reject(err.name + ": " + err.message));
+            }).catch(err => {
+                return new Promise((res, rej) => {
+                       res(err.name + ": " + err.message);
+            });
+        });
 
-        return deferred.promise;
 
     };
     Register(req: Request, res: Response) {

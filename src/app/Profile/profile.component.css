@@ -31,7 +31,7 @@
     right:0;
     display:block;
     background-color: rgba(28,32,33,0.8);
-    z-index: 100;
+    z-index: 102;
 }
 
 .InfoDiv{
@@ -48,10 +48,11 @@
     height:25%;
     background-color:#D04E33;
     border:1px solid #EEEEEE;
-    z-index:101;
+    z-index:103;
     box-sizing:border-box;
     padding:40px 40px;
     align-content: center;
+    width: 30%;
     
  }
 
@@ -99,7 +100,7 @@ i {
      float: right;
 }
 
-select {
+#Gender select {
     color: black;
 }
 

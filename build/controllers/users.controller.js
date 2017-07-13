@@ -4,7 +4,6 @@ var path = require("path");
 var bcrypt = require("bcryptjs");
 var jwt = require("jsonwebtoken");
 var _ = require("lodash");
-var Q = require("q");
 var nodemailer = require("nodemailer");
 var UsersController = (function () {
     function UsersController(UsersData) {
@@ -23,31 +22,35 @@ var UsersController = (function () {
     };
     ;
     UsersController.prototype.Login = function (Username, Password) {
-        var deferred = Q.defer();
-        this.UsersData.findOne({ Username: Username })
+        return this.UsersData.findOne({ Username: Username })
             .then(function (user) {
             if (user && bcrypt.compareSync(Password, user.hash)) {
-                var Token = void 0;
+                var Token_1;
                 if (user.Admin === true) {
-                    Token = jwt.sign(new Object({ sub: user.id, admin: true }), config_1.secret);
+                    Token_1 = jwt.sign(new Object({ sub: user.id, admin: true }), config_1.secret);
                 }
                 else {
-                    Token = jwt.sign(new Object({ sub: user.id, admin: false }), config_1.secret);
+                    Token_1 = jwt.sign(new Object({ sub: user.id, admin: false }), config_1.secret);
                 }
-                deferred.resolve({
-                    _id: user.id,
-                    Username: user.Username,
-                    Birthdate: user.Birthdate,
-                    Gender: user.Gender,
-                    EMail: user.EMail,
-                    token: Token
+                return new Promise(function (res, rej) {
+                    res({ _id: user.id,
+                        Username: user.Username,
+                        Birthdate: user.Birthdate,
+                        Gender: user.Gender,
+                        EMail: user.EMail,
+                        token: Token_1 });
                 });
             }
             else {
-                deferred.resolve();
+                return new Promise(function (res, rej) {
+                    res();
+                });
             }
-        })["catch"](function (err) { return deferred.reject(err.name + ": " + err.message); });
-        return deferred.promise;
+        })["catch"](function (err) {
+            return new Promise(function (res, rej) {
+                res(err.name + ": " + err.message);
+            });
+        });
     };
     ;
     UsersController.prototype.Register = function (req, res) {
